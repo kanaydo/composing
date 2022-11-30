@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 
+import 'main.dart';
+
 class ChatItem extends StatelessWidget {
-  const ChatItem({Key? key}) : super(key: key);
+  final ChatData chatData;
+
+  const ChatItem({Key? key, required this.chatData}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -32,29 +36,29 @@ class ChatItem extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const Text(
-                      'Bayu Angga Wijaya',
+                    Text(
+                      chatData.name,
                       style: TextStyle(
                           fontSize: 15,
                           fontWeight: FontWeight.bold
                       ),
                     ),
                     Row(
-                      children: const [
-                        Icon(
+                      children:  [
+                        const Icon(
                           Icons.check,
                           size: 15,
                           color: Colors.lightBlue,
                         ),
-                        Text('okee')
+                        Text(chatData.lastChat)
                       ],
                     )
                   ],
                 ),
               )
           ),
-          const Text(
-            'yesterday',
+          Text(
+            chatData.lastSeen,
             style: TextStyle(
                 fontSize: 10,
                 fontStyle: FontStyle.italic,
