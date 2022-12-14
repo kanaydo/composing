@@ -52,9 +52,9 @@ class MyPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('latihan composing'),
-      ),
+      // appBar: AppBar(
+      //   title: Text('latihan composing'),
+      // ),
       body: ListView.builder(
         itemCount: data.length,
         itemBuilder: (context, index) {
