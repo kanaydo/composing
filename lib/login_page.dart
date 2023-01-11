@@ -43,13 +43,16 @@ class LoginPage extends StatelessWidget {
                 final password = passwordController.text;
 
                 if (username == 'user' && password == '123456') {
+
+                  session.setLogin();
+
                   ScaffoldMessenger.of(context).showSnackBar(
                     SnackBar(
                       content: Text('login berhasil'),
                       backgroundColor: Colors.green,
                     )
                   );
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => MyPage()));
+                  Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => MyPage()));
                 } else {
                   ScaffoldMessenger.of(context).showSnackBar(
                       SnackBar(
