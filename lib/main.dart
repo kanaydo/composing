@@ -47,8 +47,13 @@ class MyHomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Whatsapp'),
+        centerTitle: true,
       ),
-      body: const Center(child: Text("Hello Kelas Flutter")),
+      body: const Center(
+          child: Text(
+        "Hello Kelas Flutter",
+        style: TextStyle(fontSize: 50, color: Colors.red),
+      )),
     );
   }
 }
