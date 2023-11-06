@@ -49,25 +49,41 @@ class MyHomePage extends StatelessWidget {
           title: const Text('Whatsapp'),
           centerTitle: true,
         ),
-        body: Container(
-          color: Colors.grey,
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              CircleAvatar(backgroundImage: NetworkImage('https://picsum.photos/200/300')),
-              Expanded(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text('Bayu Angga Wijaya'), 
-                    Text('oke')
-                  ],
+        body: Column(
+          children: [
+            Container(
+              padding: EdgeInsets.all(8),
+              decoration: BoxDecoration(
+                color: Colors.grey,
+                border: Border.all(
+                  color: Colors.red,
+                  width: 2
                 ),
+                borderRadius: BorderRadius.circular(16)
               ),
-              Text('Yesterday')
-            ],
-          ),
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  CircleAvatar(
+                    backgroundImage: NetworkImage('https://picsum.photos/200/300')
+                  ),
+                  SizedBox(width: 8,),
+                  Expanded(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text('Bayu Angga Wijaya'), 
+                        Text('oke')
+                      ],
+                    ),
+                  ),
+                  Text('Yesterday')
+                ],
+              ),
+            ),
+            
+          ],
         ));
   }
 }
