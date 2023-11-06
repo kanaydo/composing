@@ -45,15 +45,29 @@ class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Whatsapp'),
-        centerTitle: true,
-      ),
-      body: const Center(
-          child: Text(
-        "Hello Kelas Flutter",
-        style: TextStyle(fontSize: 50, color: Colors.red),
-      )),
-    );
+        appBar: AppBar(
+          title: const Text('Whatsapp'),
+          centerTitle: true,
+        ),
+        body: Container(
+          color: Colors.grey,
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              CircleAvatar(backgroundImage: NetworkImage('https://picsum.photos/200/300')),
+              Expanded(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text('Bayu Angga Wijaya'), 
+                    Text('oke')
+                  ],
+                ),
+              ),
+              Text('Yesterday')
+            ],
+          ),
+        ));
   }
 }
