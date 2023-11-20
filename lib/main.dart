@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'chat_item.dart';
 
 // HELLO FROM HERE
 
@@ -17,14 +18,50 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
 }
 
 class MyHomePage extends StatelessWidget {
   final String title;
-  const MyHomePage({super.key, required this.title});
+  MyHomePage({super.key, required this.title});
+
+  final chatItems = [
+    ChatItem(
+      data: 1,
+    ),
+    ChatItem(
+      data: 2,
+    ),
+    ChatItem(
+      data: 3,
+    ),
+    ChatItem(
+      data: 4,
+    ),
+    ChatItem(
+      data: 5,
+    ),
+    ChatItem(
+      data: 6,
+    ),
+    ChatItem(
+      data: 7,
+    ),
+    ChatItem(
+      data: 8,
+    ),
+    ChatItem(
+      data: 9,
+    ),
+    ChatItem(
+      data: 10,
+    ),
+    ChatItem(
+      data: 11,
+    )
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -33,41 +70,8 @@ class MyHomePage extends StatelessWidget {
           title: const Text('Whatsapp'),
           centerTitle: true,
         ),
-        body: Column(
-          children: [
-            Container(
-              padding: const EdgeInsets.all(8),
-              decoration: BoxDecoration(
-                color: Colors.grey,
-                border: Border.all(
-                  color: Colors.red,
-                  width: 2
-                ),
-                borderRadius: BorderRadius.circular(16)
-              ),
-              child: const Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  CircleAvatar(
-                    backgroundImage: NetworkImage('https://picsum.photos/200/300')
-                  ),
-                  SizedBox(width: 8,),
-                  Expanded(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text('Bayu Angga Wijaya'), 
-                        Text('oke')
-                      ],
-                    ),
-                  ),
-                  Text('Yesterday')
-                ],
-              ),
-            ),
-            
-          ],
+        body: ListView(
+          children: chatItems,
         ));
   }
 }
