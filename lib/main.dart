@@ -1,3 +1,4 @@
+import 'package:composing/data/chat_item_data.dart';
 import 'package:flutter/material.dart';
 import 'chat_item.dart';
 
@@ -28,39 +29,10 @@ class MyHomePage extends StatelessWidget {
   MyHomePage({super.key, required this.title});
 
   final chatItems = [
-    ChatItem(
-      data: 1,
-    ),
-    ChatItem(
-      data: 2,
-    ),
-    ChatItem(
-      data: 3,
-    ),
-    ChatItem(
-      data: 4,
-    ),
-    ChatItem(
-      data: 5,
-    ),
-    ChatItem(
-      data: 6,
-    ),
-    ChatItem(
-      data: 7,
-    ),
-    ChatItem(
-      data: 8,
-    ),
-    ChatItem(
-      data: 9,
-    ),
-    ChatItem(
-      data: 10,
-    ),
-    ChatItem(
-      data: 11,
-    )
+    ChatItemData(name: 'Steve Rogers', message: 'hello'),
+    ChatItemData(name: 'Natasha Romanav', message: 'p'),
+    ChatItemData(name: 'Bucky Barnes', message: 'dah makan?'),
+    ChatItemData(name: 'Wanda Maximov', message: 'pinjam dulu 100'),
   ];
 
   @override
@@ -70,8 +42,12 @@ class MyHomePage extends StatelessWidget {
           title: const Text('Whatsapp'),
           centerTitle: true,
         ),
-        body: ListView(
-          children: chatItems,
+        body: ListView.builder(
+          itemCount: chatItems.length,
+          itemBuilder: (context, index) {
+            final data = chatItems.elementAt(index);
+            return ChatItem(data: data);
+          },
         ));
   }
 }

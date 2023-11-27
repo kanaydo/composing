@@ -1,7 +1,8 @@
+import 'package:composing/data/chat_item_data.dart';
 import 'package:flutter/material.dart';
 
 class ChatItem extends StatelessWidget {
-  final int data;
+  final ChatItemData data;
   const ChatItem({super.key, required this.data});
 
   @override
@@ -23,10 +24,10 @@ class ChatItem extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: [Text('Bayu Angga Wijaya'), Text('oke')],
+              children: [Text(data.name), Text(data.message)],
             ),
           ),
-          Text('data-${data}')
+          Text('hello')
         ],
       ),
     );
