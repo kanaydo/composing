@@ -1,4 +1,5 @@
 import 'package:composing/data/chat_item_data.dart';
+import 'package:composing/login_page.dart';
 import 'package:flutter/material.dart';
 import 'chat_item.dart';
 
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: PageOne(),
     );
   }
 }
